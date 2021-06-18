@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi"
+    app:startDestination="@id/mainMap">
+    <fragment
+        android:id="@+id/mainMap"
+        android:name="com.example.catdog.MainMap"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mainMap_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_mainMap_to_foodFragment"
+            app:destination="@id/foodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.catdog.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_mainMap"
+            app:destination="@id/mainMap" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.example.catdog.food.FoodFragment"
+        android:label="fragment_food"
+        tools:layout="@layout/fragment_food" >
+        <action
+            android:id="@+id/action_foodFragment_to_mainMap"
+            app:destination="@id/mainMap" />
+        <action
+            android:id="@+id/action_foodFragment_to_foodSearchFragment"
+            app:destination="@id/foodSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodSearchFragment"
+        android:name="com.example.catdog.food.FoodSearchFragment"
+        android:label="fragment_food_search"
+        tools:layout="@layout/fragment_food_search" >
+        <action
+            android:id="@+id/action_foodSearchFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_foodSearchFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.example.catdog.food.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" >
+        <action
+            android:id="@+id/action_foodDetailFragment_to_foodSearchFragment"
+            app:destination="@id/foodSearchFragment" />
+    </fragment>
+</navigation>
